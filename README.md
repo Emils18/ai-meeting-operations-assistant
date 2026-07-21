@@ -18,78 +18,67 @@ The application extracts actionable business information including executive sum
 - SOP generation
 - Risk and blocker detection
 - Follow-up question generation
-- CSV export
-- JSON export
-- Markdown report export
+- Export reports as CSV, JSON, and Markdown
 
 ---
 
-## Screenshots
+# Screenshots
 
-### Dashboard
+## Dashboard
 
 ![Dashboard](assets/dashboard.png)
 
-The landing page provides a clean operational dashboard where users can configure meeting types, review supported outputs, and submit transcripts for analysis.
+The landing page provides an overview of the application and supported meeting outputs.
 
 ---
 
-### Transcript Analysis
+## Transcript Analysis
 
 ![Transcript Analysis](assets/analysis.png)
 
-Users can upload or paste meeting transcripts and process them using the Groq API. The application validates the input before generating structured operational data.
+Upload a transcript or paste one manually before sending it to the Groq API for processing.
 
 ---
 
-### Generated Report
+## Generated Report
 
 ![Generated Report](assets/report-overview.png)
 
-After analysis, the application generates:
+The generated report includes:
 
 - Executive Summary
 - Key Decisions
 - Risks and Blockers
-- Action Metrics
+- Meeting Statistics
 
 ---
 
-### Action Management
+## Action Items
 
 ![Action Items](assets/action-items.png)
 
-Structured task extraction includes:
+Every detected task is organized with:
 
-- Task description
-- Assigned owner
+- Owner
 - Deadline
 - Priority
 - Status
 
 ---
 
-### SOP and Follow-up Generation
+## Export Reports
 
-![SOP](assets/sop.png)
+![Export Options](assets/export.png)
 
-The assistant generates suggested Standard Operating Procedures together with unanswered questions that require clarification during future meetings.
-
----
-
-### Export Options
-
-![Exports](assets/export.png)
-
-Reports can be exported as:
+Export the generated meeting report as:
 
 - CSV
 - JSON
-- Markdown Report
+- Markdown
 
 ---
 
-## Technology Stack
+# Technology Stack
 
 - Python
 - Streamlit
@@ -100,6 +89,78 @@ Reports can be exported as:
 
 ---
 
-## Installation
+# Installation
 
-...
+Clone the repository:
+
+```bash
+git clone https://github.com/Emils18/ai-meeting-operations-assistant.git
+cd ai-meeting-operations-assistant
+```
+
+Create a virtual environment:
+
+```bash
+python -m venv venv
+```
+
+Activate it (Windows):
+
+```bash
+venv\Scripts\activate
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Create a `.env` file:
+
+```env
+GROQ_API_KEY=your_groq_api_key
+```
+
+Run the application:
+
+```bash
+streamlit run app.py
+```
+
+Open:
+
+```
+http://localhost:8501
+```
+
+---
+
+# Sample Use Case
+
+A property management company can upload a meeting transcript and automatically generate:
+
+- Executive summary
+- Action items
+- Assigned owners
+- Deadlines
+- Risks
+- SOP recommendations
+- Follow-up questions
+- Exportable reports
+
+---
+
+# API Provider
+
+The application uses the Groq API with Llama 3.3 for development and testing. The architecture can be adapted to other LLM providers if needed.
+
+---
+
+# Author
+
+**Emelio Mondares**
+
+GitHub: https://github.com/Emils18
+
+Portfolio: https://portfolio-final-ten-gold.vercel.app/
